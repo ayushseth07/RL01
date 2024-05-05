@@ -1,0 +1,14 @@
+.git
+# Ignore log folder and log files
+/logs
+/logs/
+
+# Ignore node modules and vendor folder files
+/node_modules
+/public/vendors/
+
+# Ignore package-lock and configuration files
+/package-lock.json
+/AppConfig.properties
+report.html
+.scannerwork

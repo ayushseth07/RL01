@@ -1,0 +1,137 @@
+//- include ../common/Header
+//- body
+//-   #message-box-modal.modal
+//-    .modal-content
+//-     .modal-subcontent.bg-black
+//-      div.close(onclick="utils.CloseMessageBox()") &times;
+//-     .modal-subcontent
+//-      p#message-box-content
+//-      div.d-flex.justify-content-center
+//-       button(class= "custom-btn modal-btn" onclick="utils.CloseMessageBox()") 
+//-        span OK
+//-   #top-nav-bar
+//-    h2 Rank List
+//-    div
+//-      ul.nav-links
+//-        li
+//-          a(href="/login") Login
+//-   .form-box
+//-     h2 Signup
+//-     form#signup-form(action="/signup", method="POST")
+//-       .user-box
+//-         input(type="text", id="name", name="name", required)
+//-         label(for="name") Username
+//-       .user-box
+//-         input(type="email", id="email", name="email", required)
+//-         label(for="email") Email
+//-       .user-box
+//-         input(type="password", id="password", name="password", required)
+//-         label(for="password") Password
+//-       .user-box
+//-         select(id="role", name="role", required)
+//-           option(value="" selected disabled) Select Role
+//-           option(value="admin") Admin
+//-           option(value="dean") Dean
+//-           option(value="placement_head") Placement Head
+//-       button.custom-btn(type="submit")
+//-         span Signup
+//- script(src="/js/SignupView.js")
+
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="../css/Navbar.css")
+    link(rel="stylesheet", href="../css/Login.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap", rel="stylesheet")
+    
+  header#navbar-header
+   p.logo Rank List
+   nav
+     ul.nav__links.nav_register
+      a.login-nav-btn(href="/login") Login
+
+  body
+    
+     div.wrapper
+      header SIGNUP
+      form#signup-form(action="/signup", method="POST")
+
+
+        .field.username
+          .input-area
+            input(type="text", placeholder="Enter Username")
+            i.icon.fas.fa-user-tie
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt Username cannot be empty.
+
+        .field.email
+          .input-area
+            input(type="text", placeholder="Enter Email", name="email")
+            i.icon.fas.fa-envelope
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt Enter valid Email Address.
+
+        .field.password
+          .input-area
+            input(type="password", placeholder="Enter Password")
+            i.icon.fas.fa-lock
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt Enter Password
+
+
+        .field.role
+          .input-area
+            select(id="role", name="role")
+              option(value="" selected disabled) Select Role
+              option(value="admin") Admin
+              option(value="dean") Dean
+              option(value="placement_head") Placement Head
+
+            i.icon.fas.fa-user-tie
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt Employee Role cannot be empty.
+
+        input.login-btn(type="submit", value="Register")
+
+script(src="/js/SignupView.js")
+
+
+
+
+//- doctype html
+//- html(lang="en")
+//-   head
+//-     meta(charset="UTF-8")
+//-     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-     link(rel="stylesheet", href="../css/Login.css")
+//-     link(rel="stylesheet", href="../css/Navbar.css")
+//-     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+//-     link(href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap", rel="stylesheet")
+//-   header#navbar-header
+//-     p.logo Rank List
+    
+//-   body
+//-     .wrapper
+//-       header LOGIN
+//-       form#login-form(action="/login", method="POST")
+//-         .field.email
+//-           .input-area
+//-             input(type="email", placeholder="Enter Email")
+//-             i.icon.fas.fa-user-tie
+//-             i.error.error-icon.fas.fa-exclamation-circle
+//-           .error.error-txt Enter valid Email Address.
+//-         .field.password
+//-           .input-area
+//-             input(type="password", placeholder="Enter Password")
+//-             i.icon.fas.fa-lock
+//-             i.error.error-icon.fas.fa-exclamation-circle
+//-           .error.error-txt Enter Password 
+//-         .pass-txt
+//-         input(type="submit", value="Login")
+      
+//- script(src='/js/Utils.js')
+//- script(src="/js/LoginView.js")
