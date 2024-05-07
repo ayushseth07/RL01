@@ -1,27 +1,3 @@
-/**
- * Project Name: Process Rank List
- * @company YMSLI
- * @author Ayush Seth
- * @date Jan 09, 2024
- * Copyright (c) 2024, Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * -----------------------------------------------------------------------------------
- * Description
- * -----------------------------------------------------------------------------------
- * Express Router for handling user logout.
- * Routers:
- * - GET /: Logs out the user by destroying the session and redirects to the login page.
- * -----------------------------------------------------------------------------------
- * Private Functions:
- * - None
- * -----------------------------------------------------------------------------------
- * Revision History
- * -----------------------------------------------------------------------------------
- * Modified By          Modified On         Description
- * Ayush                09 Jan 2024         Initially created
- * Ayush                10 Jan 2024         Added get rout to logout user
- * -----------------------------------------------------------------------------------
- */
-
 let express = require("express");
 let router = express.Router();
 let httpStatus = require("http-status-codes").StatusCodes;

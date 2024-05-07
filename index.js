@@ -16,5 +16,6 @@ appConfigReader
      require("./bin/www");
   })
   .catch((err) => {
+    console.log(err)
     global.log("error", err.message);
   });

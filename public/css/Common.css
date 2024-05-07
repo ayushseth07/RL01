@@ -368,3 +368,43 @@ option {
     box-shadow: 0.4em -0.4em 0 0 currentcolor;
   }
 }
+
+.h1, h1 {
+  font-size: 2.5rem;
+}
+
+.h4, h4 {
+  font-size: 1.5rem;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.row {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.jutify-content-center{
+  justify-content: center;
+}
+.h-90{
+  height: 90%;
+}
+.flex-direction-column{
+  flex-direction: column;
+}
+
+.mr-2, .mx-2 {
+  margin-right: .5rem !important;
+}

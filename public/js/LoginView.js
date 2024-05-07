@@ -1,13 +1,3 @@
-/**
- * Organization      : Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * Project Name      : Process Rank List
- * Decription        : Client side javascript for Login view
- * Created On        : 09 Jan 2024
- * Created By        : Ayush Seth
- * Last Updated By   : Ayush Seth
- */
-
-// Constant for login success message
 const LOGIN_SUCCESSFUL = "Login successful";
 
 /**
@@ -43,25 +33,73 @@ let login = {
      */
     Validate : function () {
         // Extract user input values from the form
-        let email = document.getElementById("email").value.trim();
-        let password = document.getElementById("password").value.trim();
+        // let email = document.getElementById("email").value.trim();
+        // let password = document.getElementById("password").value.trim();
 
-        // Validate email
-        if (!window.utils.EmailValidation(email)) {
-            // Show error message if email is invalid
-            window.utils.MessageBox(window.INVALID_EMAIL);
-            return false;
+
+        let form = document.querySelector("form");
+
+        let eField = form.querySelector(".email");
+        let eInput = eField.querySelector("input");
+      
+        let pField = form.querySelector(".password");
+        let pInput = pField.querySelector("input");
+
+        pInput.value == ""
+        ? pField.classList.add("shake", "error")
+        : CheckPassword();
+      
+        eInput.value == ""
+        ? eField.classList.add("shake", "error")
+        : CheckEmail();
+
+        setTimeout(() => {
+        pField.classList.remove("shake");
+        eField.classList.remove("shake");
+        }, 500);
+
+        pInput.onkeyup = () => {
+        CheckPassword();
+        };
+        eInput.onkeyup = () => {
+            CheckEmail();
+        };
+
+        function CheckPassword() {
+            let passwordInput = pInput.value.trim();
+            let errorTxt = pField.querySelector(".error-txt");
+        
+            if (passwordInput === "") {
+                pField.classList.add("error");
+                pField.classList.remove("valid");
+                errorTxt.innerText = "Password can't be blank";
+            } else {
+                pField.classList.remove("error");
+                pField.classList.add("valid");
+            }
         }
 
-        // Validate password
-        if (!window.utils.PasswordValidation(password)) {
-            // Show error message if password is invalid
-            window.utils.MessageBox(window.INCORRECT_PASSWORD_FORMAT);
-            return false;
-        }
+        
+      /**
+       * Checks the validity of the email input field and updates the corresponding error message and styling.
+       */
+      function CheckEmail() {
+        let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; // Email pattern
 
-        // Validation passed
-        return true;
+        if (!eInput.value.match(pattern)) {
+          eField.classList.add("error");
+          eField.classList.remove("valid");
+          let errorTxt = eField.querySelector(".error-txt");
+          eInput.value != ""
+            ? (errorTxt.innerText = "Enter a valid email address")
+            : (errorTxt.innerText = "Email can't be blank");
+        } else {
+          eField.classList.remove("error");
+          eField.classList.add("valid");
+        }
+      }
+        if ( !pField.classList.contains("error") && !eField.classList.contains("error")) return true;
+        else return false;
     },
 
     /**
@@ -101,6 +139,6 @@ let login = {
      */
     FailFunction : function (error) {
         // Handle error response here
-        window.utils.MessageBox(error);
+        window.utils.MessageBox("Incorrect Password");
     },
 };

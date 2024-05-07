@@ -11,7 +11,7 @@ function showLoader() {
 function hideLoader() {
     document.getElementById('loader').style.display = 'none';
 }
-
+showLoader();
 window.addEventListener("load", function () {
-    showLoader();
+    hideLoader();
 });
