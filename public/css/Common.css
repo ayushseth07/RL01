@@ -408,3 +408,15 @@ option {
 .mr-2, .mx-2 {
   margin-right: .5rem !important;
 }
+
+.text-align-center{
+  text-align: center;
+}
+
+.w-80{
+  width: 80%;
+}
+
+.m-auto{
+  margin: 0 auto;
+}
