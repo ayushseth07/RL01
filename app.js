@@ -1,21 +1,3 @@
-/**
- * Project Name: Process Rank List
- * @company YMSLI
- * @author Ayush Seth
- * @date Jan 09, 2024
- * Copyright (c) 2024, Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * -----------------------------------------------------------------------------------
- * Description
- * -----------------------------------------------------------------------------------
- * Express application setup with session handling and routing.
- * -----------------------------------------------------------------------------------
- * Revision History
- * -----------------------------------------------------------------------------------
- * Modified By          Modified On         Description
- * Ayush Seth           09 Jan 2024         Initial creation
- * -----------------------------------------------------------------------------------
- */
-
 let express = require("express");
 let indexRouter = require("./routes/IndexRouter.js");
 const httpStatus = require("http-status-codes").StatusCodes;

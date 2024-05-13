@@ -1,25 +1,3 @@
-/**
- * Project Name: Process Rank List
- * @company YMSLI
- * @author Ayush Seth
- * @date Jan 09, 2024
- * Copyright (c) 2024, Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * -----------------------------------------------------------------------------------
- * Description
- * -----------------------------------------------------------------------------------
- * Service module for handling user login logic.
- * Uses data access module Login and bcrypt for password hashing.
- * -----------------------------------------------------------------------------------
- * Public Functions:
- * - LoginUser: Validates user credentials, compares hashed passwords, and returns login status.
- * -----------------------------------------------------------------------------------
- * Revision History
- * -----------------------------------------------------------------------------------
- * Modified By          Modified On         Description
- * Ayush Seth           09 Jan 2024         Initial creation
- * -----------------------------------------------------------------------------------
- */
-
 let login = require("../data_access/database/Login");
 let bcrypt = require('bcrypt');
 

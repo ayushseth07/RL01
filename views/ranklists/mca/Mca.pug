@@ -19,7 +19,7 @@ body
   #loader.loader
   .d-flex.jutify-content-center.h-90.flex-direction-column
    .row
-      .col-12
+      .col-12#search-tab
           .wrapper.w-80.m-auto
             h3.text-align-center MCA Ranklist
             br
@@ -56,6 +56,7 @@ body
                   option(value="4") Sem 4
               button.btn.btn-dark(style="color: white;") Search
           br
- 
+      .col#table-area.d-none
+          .wrapper.w-80.m-auto
 script(src='/vendors/apexcharts/dist/apexcharts.min.js')
 script(src="/js/ranklists/Mca.js")

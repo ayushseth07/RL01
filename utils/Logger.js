@@ -1,25 +1,4 @@
-/**
- * Project Name: Process Rank List
- * @company YMSLI
- * @author Ayush Seth
- * @date Jan 09, 2024
- * Copyright (c) 2024, Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * -----------------------------------------------------------------------------------
- * Description
- * -----------------------------------------------------------------------------------
- * Utility module for handling Winston logger configurations.
- * Creates a custom logger instance with DailyRotateFile transport for log rotation.
- * Provides a Log function to log messages with details like FileName, FunctionName, and LineNumber.
- * -----------------------------------------------------------------------------------
- * Functions:
- * - Log: Fetches the FileName, FunctionName, and LineNumber corresponding to the callee and logs in the required format.
- * -----------------------------------------------------------------------------------
- * Revision History
- * -----------------------------------------------------------------------------------
- * Modified By          Modified On         Description
- * Ayush Seth           09 Jan 2024         Initial creation
- * -----------------------------------------------------------------------------------
- */
+
 
 let path = require("path");
 let winston = require("winston");

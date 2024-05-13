@@ -9,10 +9,10 @@ let SearchResult=require("./CourseRoutes/McaRouter");
 
 router.use("/login", LoginRouter);
 router.use("/signup", SignupRouter);
-router.use("/dashboard", DashboardRouter);
-router.use("/logout", LogoutRouter);
-router.use("/ranklist",RankListRouter);
-router.use("/searchResult",SearchResult )
+router.use("/dashboard",IsAuthenticated, DashboardRouter);
+router.use("/logout",IsAuthenticated, LogoutRouter);
+router.use("/ranklist",IsAuthenticated,RankListRouter);
+router.use("/searchResult",IsAuthenticated,SearchResult )
 
 
 /**

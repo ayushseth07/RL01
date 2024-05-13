@@ -420,3 +420,53 @@ option {
 .m-auto{
   margin: 0 auto;
 }
+
+/* CSS for table */
+.table {
+  width: 100%;
+}
+.table-header {
+  display: flex;
+  width: 100%;
+  background: #000;
+}
+
+.table-header .header__item {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  background-color: #000;
+  border-bottom: 0px;
+}
+.table-header tr{
+  display: flex;
+  width: 100%;
+  padding: 12px 0;
+}
+.table-row {
+  display: flex;
+  width: 100%;
+  padding: 12px 0;
+  transition: transform 0.3s ease;
+}
+
+.table-row:hover {
+  transform: scale(1.05);
+}
+
+.table-row:nth-of-type(odd) {
+  background: white;
+}
+
+.table-data {
+  flex: 1;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.table-row:hover .table-data:first-child {
+  transform: scale(1);
+}

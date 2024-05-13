@@ -1,7 +1,7 @@
 let express = require("express");
 let router = express.Router();
 let httpStatus = require("http-status-codes").StatusCodes;
-let searchResultService = require("../service/SearchResultService");
+let searchResultService = require("../../service/SearchResultService");
 let joi = require("joi");
 
 /**
@@ -25,7 +25,6 @@ router.post("/", (req, res) => {
     try {
         // Input validation schema using Joi
         let schema = joi.object({
-            college : joi.string().required(),
             batch : joi.string().required(),
             sem: joi.string().required()
         });
@@ -39,24 +38,17 @@ router.post("/", (req, res) => {
         }
 
         // Destructure email and password from the request body
-        let { college, batch, sem } = req.body;
+        let {batch, sem } = req.body;
 
         // Authenticate user using LoginService, with a timeout
         global.utils
             .PromiseWithTimeout(
                 global.appConfig.DATA_PROCESSING_TIMEOUT,
-                searchResultService.SearchResult(college, batch, sem),
+                searchResultService.SearchResult(batch, sem),
                 global.messages.DATA_PROCESSING_TIMEOUT
             )
             .then(({ timedOut, message, result }) => {
                 let status = timedOut ? httpStatus.REQUEST_TIMEOUT : httpStatus.OK;
-                // Set session data for the authenticated user
-                // if (message == global.messages.LOGIN_SUCCESSFUL) {
-                //     req.session.user = {
-                //         username : req.body.email,
-                //     };
-                // }
-
                 res.status(status).json({
                     message : message,
                     result : result,
@@ -66,7 +58,6 @@ router.post("/", (req, res) => {
                 res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message : e.message });
             });
     } catch (error) {
-        console.error('Error during fetching result:', error);
         res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message : 'Internal Server Error' });
     }
 });

@@ -1,23 +1,4 @@
-/**
- * Project Name: Process Rank List
- * @company YMSLI
- * @author Ayush Seth
- * @date Jan 09, 2024
- * Copyright (c) 2024, Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * -----------------------------------------------------------------------------------
- * Description
- * -----------------------------------------------------------------------------------
- * Utility module providing a promise wrapper method with timeout functionality.
- * -----------------------------------------------------------------------------------
- * Functions:
- * - PromiseWithTimeout: A promise wrapper method with timeout functionality.
- * -----------------------------------------------------------------------------------
- * Revision History
- * -----------------------------------------------------------------------------------
- * Modified By          Modified On         Description
- * Ayush Seth           09 Jan 2024         Initial creation
- * -----------------------------------------------------------------------------------
- */
+
 
 let utils = {
   /**

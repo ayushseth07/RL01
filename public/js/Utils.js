@@ -1,11 +1,3 @@
-/**
- * Organization      : Yamaha Motor Solutions (INDIA) Pvt Ltd.
- * Project Name      : Process Rank List
- * Decription        : common utily functions and constants
- * Created On        : 09 Jan 2024
- * Created By        : Ayush Seth
- * Last Updated By   : Ayush Seth
- */
 
 // Constants
 window.BASE_URL = "http://localhost:3000";
