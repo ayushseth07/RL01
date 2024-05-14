@@ -86,7 +86,7 @@ let searchResult = {
         const thead = document.createElement("thead");
         thead.classList.add("table-header")
         const headerRow = document.createElement("tr");
-        const headers = ["Rank", "Roll Number", "Name", "SGPA", "Total Marks", "Placement Status", "Batch"];
+        const headers = ["Rank", "Roll Number", "Name", "SGPA", "Total Marks", "Placement Status","Backlogs", "Batch"];
     
         headers.forEach(headerText => {
             const th = document.createElement("th");
@@ -106,7 +106,7 @@ let searchResult = {
             if (data.calculate_sgpa_and_rank.rank !== null) {
                 const tr = document.createElement("tr");
                 tr.classList.add("table-row")
-                const keys = ['rank', 'roll_number', 'name', 'sgpa', 'total_marks', 'placement_status', 'batch'];
+                const keys = ['rank', 'roll_number', 'name', 'sgpa', 'total_marks', 'placement_status','count_marks_less_than_40', 'batch'];
     
                 keys.forEach(key => {
                     const td = document.createElement("td");
